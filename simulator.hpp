@@ -5,11 +5,11 @@
 
 class Simulator {
 public:
-    double dt;
-    double max_time;
+  double dt;
+  double max_time;
 
-    Simulator(double time_step, double total_time);
-    void run(GolfBall& ball);
+  Simulator(double time_step, double total_time);
+  void run(GolfBall &ball);
 };
 
 #endif

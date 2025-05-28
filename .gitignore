@@ -34,3 +34,6 @@
 # Debug files
 *.ilk
 *.pdb
+
+# output files
+*.txt
