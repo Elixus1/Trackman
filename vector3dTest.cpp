@@ -49,8 +49,7 @@ TEST(vectorTest, norm) {
 }
 
 TEST(vectorTest, equal) {
-  Vector3D a(-0, -0,-0);
-  Vector3D b(0,0,0);
-  assert( a == b); 
-
+  Vector3D a(-0, -0, -0);
+  Vector3D b(0, 0, 0);
+  assert(a == b);
 }

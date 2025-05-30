@@ -38,3 +38,30 @@ void Simulator::run(GolfBall &ball) {
       break;
   }
 }
+
+void Simulator::euler(GolfBall &ball) {
+  int steps = static_cast<int>(max_time / dt);
+  // file to save trajectory
+  std::ofstream file("trajectory.txt");
+  Settings settings = {1, 0, 200, 0, 10, 0, 50};
+  // write inital position
+  Vector3D force = computeTotalForce(ball);
+  WriteTrajectory(file, 0, ball.position, ball.velocity, force, settings);
+  for (int i = 1; i < steps; i++) {
+    // calc new position
+    Vector3D new_position;
+    new_position =
+        ball.position + ball.velocity * dt + dt * dt / (2 * mass) * force;
+    // calc force for next step
+    Vector3D new_vel;
+    new_vel = ball.velocity + dt * force / mass;
+    // save Data
+    ball.position = new_position;
+    ball.velocity = new_vel;
+    WriteTrajectory(file, i, ball.position, ball.velocity, force, settings);
+    force = computeTotalForce(ball);
+    if (ball.position.z < 0) {
+      break;
+    }
+  }
+}

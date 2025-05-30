@@ -10,6 +10,7 @@ public:
 
   Simulator(double time_step, double total_time);
   void run(GolfBall &ball);
+  void euler(GolfBall &ball);
 };
 
 #endif

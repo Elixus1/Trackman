@@ -24,5 +24,8 @@ TEST(physics, forces) {
   ASSERT_EQ(x_komponente, result.x);
 
   // magnus force TEST
-
+  result;
+  Vector3D spin(0, 0, 7100);
+  calc = computeMagnus(spin, vel);
+  calc.print();
 }

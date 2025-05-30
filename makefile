@@ -6,7 +6,7 @@ OBJECTS = $(addsuffix .o, $(basename  $(filter-out $(EXCLUDED) %Test.cpp %Main.c
 TESTLIBS = -lgtest -lgtest_main -lpthread
 TEST_BINARIES = $(basename $(wildcard *[Tt]est.cpp))
 
-all: compile
+all: clean format compile
 
 %.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $<

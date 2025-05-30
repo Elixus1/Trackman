@@ -19,8 +19,6 @@ public:
   Vector3D normalized() const;
   Vector3D cross(const Vector3D &other) const;
   void print() const;
-
-  
 };
 
 Vector3D operator*(double s, const Vector3D &);

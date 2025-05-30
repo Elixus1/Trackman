@@ -8,7 +8,7 @@ const double dragCoefficient = 0.25; // dimensionless between 0.24 and 0.7
 const double radius = 0.002135;      // in m
 const double pi = 3.141593;
 const double area = pi * radius * radius;
-const double magnusCoefficient = 0.0005;
+const double magnusCoefficient = 0.4;
 Vector3D computeGravity() { return Vector3D(0, 0, -mass * g); }
 
 Vector3D computeDrag(const Vector3D &velocity) {
@@ -18,7 +18,11 @@ Vector3D computeDrag(const Vector3D &velocity) {
 }
 
 Vector3D computeMagnus(const Vector3D &spin, const Vector3D &velocity) {
-  return magnusCoefficient * spin.cross(velocity);
+  double speed = velocity.norm();
+  Vector3D spin_unit = spin.normalized();
+  Vector3D vel_unit = velocity.normalized();
+  return 0.5 * magnusCoefficient * airDensity * area * speed * speed *
+         vel_unit.cross(spin_unit);
 }
 
 Vector3D computeTotalForce(const GolfBall &ball) {

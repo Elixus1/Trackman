@@ -31,11 +31,9 @@ Vector3D &Vector3D::operator+=(const Vector3D &v) {
 }
 // compare vectors
 bool Vector3D::operator==(const Vector3D &v) const {
-  double epsilon = 1e-9; 
-  return std::fabs(x- v.x) < epsilon 
-    && std::fabs(y - v.y) < epsilon
-    && std::fabs(z - v.z) < epsilon;
-
+  double epsilon = 1e-9;
+  return std::fabs(x - v.x) < epsilon && std::fabs(y - v.y) < epsilon &&
+         std::fabs(z - v.z) < epsilon;
 }
 
 // Vector norm (magnitude)
@@ -54,6 +52,5 @@ Vector3D Vector3D::cross(const Vector3D &other) const {
 }
 // print Vector3d
 void Vector3D::print() const {
-  std::cout<< "{" << x << ", " << y << ", " << z << "}" << std::endl; 
+  std::cout << "{" << x << ", " << y << ", " << z << "}" << std::endl;
 }
-
