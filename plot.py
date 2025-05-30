@@ -27,5 +27,5 @@ ax.set_zlabel('Z')
 ax.set_title('3D Scatter Plot of Atom Positions')
 
 plt.tight_layout()
-plt.show()
+plt.savefig("trajectory.png")
 

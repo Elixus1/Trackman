@@ -10,6 +10,8 @@ void WriteTrajectory(std::ofstream &out, int timestep, const Vector3D &x,
   out << settings.xlo << " " << settings.xhi << "\n";
   out << settings.ylo << " " << settings.yhi << "\n";
   out << settings.zlo << " " << settings.zhi << "\n";
-  out << "ITEM: ATOMS id type x y z\n";
-  out << "1 1 1 " << x.x << " " << x.y << " " << x.z << "\n";
+  out << "ITEM: ATOMS id type x y z vx vy vz fx fy fz\n";
+  out << "1 1 " << x.x << " " << x.y << " " << x.z << " " << vel.x << " "
+      << vel.y << " " << vel.z << " " << force.x << " " << force.y << " "
+      << force.z << "\n";
 }
