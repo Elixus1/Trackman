@@ -1,11 +1,13 @@
 #include "physics.hpp"
 #include <cmath>
-const double mass = 0.045;
-const double g = 9.81;
-const double airDensity = 1.225;
-const double dragCoefficient = 0.25;
-const double radius = 0.02135;
-const double area = 3.1416 * radius * radius;
+#include <numbers>
+const double mass = 0.04593;         // in kg
+const double g = 9.81;               // m/s^2
+const double airDensity = 1.225;     // kg/m^3 at 15°C
+const double dragCoefficient = 0.25; // dimensionless between 0.24 and 0.7
+const double radius = 0.002135;      // in m
+const double pi = 3.141593;
+const double area = pi * radius * radius;
 const double magnusCoefficient = 0.0005;
 Vector3D computeGravity() { return Vector3D(0, 0, -mass * g); }
 

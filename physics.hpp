@@ -8,6 +8,7 @@ extern const double mass;
 extern const double g;
 extern const double airDensity;
 extern const double dragCoefficient;
+extern const double pi;
 extern const double radius;
 extern const double area;
 extern const double magnusCoefficient;

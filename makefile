@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wextra -Wall -pedantic -std=c++20 -O2# -g # -fsanitize=undefined  -fsanitize=address
+CXXFLAGS =-std=c++20 #-Wextra -Wall -pedantic  -O2# -g # -fsanitize=undefined  -fsanitize=address
 EXCLUDED = poly2.cpp
 HEADERS = $(filter-out $(EXCLUDED), $(wildcard *.hpp))
 OBJECTS = $(addsuffix .o, $(basename  $(filter-out $(EXCLUDED) %Test.cpp %Main.cpp, $(wildcard *.cpp))))
